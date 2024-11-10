@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f6eb;
+}
+
+.intro-section {
+  display: flex; /* Use flexbox for layout */
+  height: 100vh; /* Full viewport height */
+}
+
+.left-intro {
+  width: 50%; /* Left side for the intro content */
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.right-intro {
+  width: 50%; /* Right side for the intro image */
+  height: 100vh;
+  background-image: url("path/to/your/intro-image.jpg"); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+}
+
+.menu {
+  font-size: 18px;
+  color: #b35a1f;
+  display: flex; /* Keep it as flex to align items */
+  align-items: center; /* Center items vertically */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column; /* Stack the bars vertically */
+}
+
+.menu-text {
+  margin-left: 10px;
+}
+
+.bar {
+  width: 25px; /* Width for hamburger icon */
+  height: 3px; /* Height for the hamburger icon */
+  background-color: #b35a1f;
+  margin: 2px 0; /* Space between lines */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.dropdown {
+  display: none; /* Hide the dropdown by default */
+  position: absolute;
+  top: 0; /* Position it at the top */
+  left: 0; /* Start from the left */
+  width: 250px; /* Set the width of the sliding menu */
+  height: 100vh; /* Full height */
+  background-color: white; /* Background color for dropdown */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1; /* Make sure it appears above other content */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: transform 0.3s ease; /* Smooth transition for sliding effect */
+}
+
+.dropdown.show {
+  display: block; /* Show the dropdown when the class 'show' is added */
+  transform: translateX(0); /* Slide in from the left */
+}
+
+.dropdown ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.dropdown li {
+  padding: 20px 25px; /* Padding for each item */
+}
+
+.dropdown li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #b35a1f; /* Link color */
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+.title {
+  font-size: 48px;
+  color: #3d3d3d;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #7d7d7d;
+  margin-top: 10px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #3d3d3d;
+}
+
+p {
+  text-align: center;
+  color: #7d7d7d;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Feesten en Evenementen</title>
+  </head>
+  <body>
+    <div class="left-section">
+      <div class="menu" id="menu">
+        <div class="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <span class="menu-text">Menu</span>
+      </div>
+      <div class="dropdown" id="dropdown">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Stiltefotografie.html">Stiltefotografie</a></li>
+          <li><a href="Portretfotografie.html">Portretfotografie</a></li>
+          <li><a href="macrofotografie.html">Macrofotografie</a></li>
+          <li><a href="Feesten_evenementen.html">Feesten & Evenementen</a></li>
+        </ul>
+      </div>
+      <h1>Feesten en Evenementen</h1>
+      <p>This is the page for Feesten en Evenementen.</p>
+      <a href="index.html">Back to Home</a>
+    </div>
+    <div class="right-section"></div>
+
+    <script>
+      // JavaScript to toggle the dropdown menu
+      const menu = document.getElementById("menu");
+      const dropdown = document.getElementById("dropdown");
+
+      menu.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent the click event from bubbling up
+        dropdown.classList.toggle("show");
+      });
+
+      // Close the dropdown if clicked outside
+      document.addEventListener("click", (event) => {
+        if (
+          !menu.contains(event.target) &&
+          dropdown.classList.contains("show")
+        ) {
+          dropdown.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>
