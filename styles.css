@@ -7,6 +7,7 @@ body {
 .intro-section {
   display: flex; /* Use flexbox for layout */
   height: 100vh; /* Full viewport height */
+  margin-bottom: 15vh; /* Voeg marge toe onder elke sectie */
 }
 
 .left-intro {
@@ -15,15 +16,33 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* Standaard uitlijning aan de linkerkant */
+}
+
+.center-text {
+  align-items: center; /* Centreer items horizontaal */
+  text-align: center; /* Centreer tekst */
+  padding-left: 0; /* Verwijder padding aan de linkerkant */
 }
 
 .right-intro {
-  width: 50%; /* Right side for the intro image */
-  height: 100vh;
-  background-image: url("path/to/your/intro-image.jpg"); /* Replace with your actual image path */
-  background-size: cover;
-  background-position: center;
+  width: 50%; /* Rechterzijde voor de intro afbeelding */
+  height: 100vh; /* Volledige hoogte van het viewport */
+  background-size: cover; /* Zorg ervoor dat de afbeelding de hele ruimte bedekt */
+  background-position: center; /* Centreer de afbeelding */
+}
+
+.intro-section.mirrored {
+  flex-direction: row-reverse;
+  margin-bottom: 0; /* Reverse the order for the mirrored section */
+}
+
+.intro-section.mirrored .right-intro {
+  background-image: url("images/image2.png"); /* Vervang dit door het pad naar je tweede afbeelding */
+}
+
+.intro-section:not(.mirrored) .right-intro {
+  background-image: url("images/image1.png"); /* Vervang dit door het pad naar je eerste afbeelding */
 }
 
 .menu {
@@ -80,20 +99,15 @@ body {
 }
 
 .dropdown li {
-  padding: 20px 25px; /* Padding for each item */
-}
-
-.dropdown li a {
-  text-decoration: none; /* Remove underline from links */
-  color: #b35a1f; /* Link color */
+  padding: 15px; /* Add padding for each item */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .dropdown li:hover {
   background-color: #f0f0f0; /* Change background on hover */
 }
-
 .title {
-  font-size: 48px;
+  font-size: 55px;
   color: #3d3d3d;
   font-weight: bold;
   margin: 0;
@@ -105,6 +119,8 @@ body {
   color: #7d7d7d;
   margin-top: 10px;
   text-align: center;
+  padding-left: 5vh;
+  padding-right: 5vh;
 }
 
 h1 {
