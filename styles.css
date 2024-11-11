@@ -152,7 +152,6 @@ p {
     background-size: cover; /* Ensure the image covers the entire area */
     background-position: center; /* Center the image */
     height: 50vh; /* Set a height for the left intro */
-    margin-top: 5.5vh;
     margin-bottom: -20vh;
   }
 
