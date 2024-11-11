@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>SharajeFotografie</title>
+    <title>Your Website Title</title>
   </head>
   <body>
     <div class="intro-section">
@@ -19,17 +19,19 @@
         </div>
         <div class="dropdown" id="dropdown">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Stiltefotografie.html">Stiltefotografie</a></li>
-            <li><a href="Portretfotografie.html">Portretfotografie</a></li>
-            <li><a href="macrofotografie.html">Macrofotografie</a></li>
-            <li>
-              <a href="Feesten_evenementen.html">Feesten & Evenementen</a>
-            </li>
+            <a href="index.html"><li>Home</li></a>
+            <a href="Stiltefotografie.html"><li>Stiltefotografie</li></a>
+            <a href="Portretfotografie.html"><li>Portretfotografie</li></a>
+            <a href="macrofotografie.html"><li>Macrofotografie</li></a>
+            <a href="Feesten_evenementen.html">
+              <li>Feesten & Evenementen</li>
+            </a>
           </ul>
         </div>
-        <h1 class="title">SharajeFotografie</h1>
-        <p class="subtitle">Momenten vastleggen, die niemand anders ziet.</p>
+        <div class="text-box">
+          <h1 class="title">SharajeFotografie</h1>
+          <p class="subtitle">Momenten vastleggen, die niemand anders ziet.</p>
+        </div>
       </div>
       <div class="right-intro"></div>
     </div>
@@ -55,19 +57,25 @@
       const menu = document.getElementById("menu");
       const dropdown = document.getElementById("dropdown");
 
+      // Toggle dropdown visibility on menu click
       menu.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevent the click event from bubbling up
-        dropdown.classList.toggle("show");
+        event.stopPropagation(); // Prevent click from bubbling up
+        dropdown.classList.toggle("show"); // Toggle the dropdown visibility
       });
 
-      // Close the dropdown if clicked outside
+      // Close the dropdown if clicking outside of it
       document.addEventListener("click", (event) => {
         if (
           !menu.contains(event.target) &&
           dropdown.classList.contains("show")
         ) {
-          dropdown.classList.remove("show");
+          dropdown.classList.remove("show"); // Hide the dropdown
         }
+      });
+
+      // Prevent the links from being blocked by the dropdown
+      dropdown.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent click from bubbling up to the document
       });
     </script>
   </body>
