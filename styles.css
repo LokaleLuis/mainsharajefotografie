@@ -38,7 +38,7 @@ body {
 }
 
 .intro-section.mirrored .right-intro {
-  background-image: url("images/image2.jpg"); /* Vervang dit door het pad naar je tweede afbeelding */
+  background-image: url("images/image2.jpeg"); /* Vervang dit door het pad naar je tweede afbeelding */
 }
 
 .intro-section:not(.mirrored) .right-intro {
