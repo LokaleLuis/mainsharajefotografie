@@ -42,7 +42,7 @@ body {
 }
 
 .intro-section:not(.mirrored) .right-intro {
-  background-image: url("images/image1.png"); /* Vervang dit door het pad naar je eerste afbeelding */
+  background-image: url("images/image2.jpeg"); /* Vervang dit door het pad naar je eerste afbeelding */
 }
 
 .menu {
