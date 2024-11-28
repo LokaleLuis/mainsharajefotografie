@@ -1,0 +1,185 @@
+/* Add your existing CSS styles here */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f6eb;
+}
+h1 {
+  margin-top: 4vh;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  margin: 5vh 20%;
+  font-size: 20px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+.photo {
+  margin: 10px;
+  text-align: center;
+}
+.photo img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.menu {
+  font-size: 18px;
+  color: #b35a1f;
+  display: flex; /* Keep it as flex to align items */
+  align-items: center; /* Center items vertically */
+  position: fixed; /* Make the menu fixed to the viewport */
+  top: 0; /* Position it at the top */
+  left: 0; /* Position it at the left */
+  background-color: #fff; /* Background color for the menu */
+  z-index: 10; /* Ensure the menu is above other content */
+  padding: 10px; /* Add some padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  margin-bottom: 15px; /* Add margin to create space below the menu */
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column; /* Stack the bars vertically */
+}
+
+.menu-text {
+  margin-left: 10px;
+}
+
+.bar {
+  width: 25px; /* Width for hamburger icon */
+  height: 3px; /* Height for the hamburger icon */
+  background-color: #b35a1f;
+  margin: 2px 0; /* Space between lines */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+.dropdown {
+  display: none; /* Hide the dropdown by default */
+  position: fixed;
+  top: 42px; /* Position it below the menu */
+  left: 0; /* Start from the left */
+  width: 250px; /* Set the width of the sliding menu */
+  background-color: white; /* Background color for dropdown */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1; /* Make sure it appears above other content */
+}
+
+.dropdown.show {
+  display: block; /* Show the dropdown when the class 'show' is added */
+}
+
+.dropdown .ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0 auto; /* Remove margin */
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown .li {
+  padding: 15px; /* Add padding for each item */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-align: center;
+}
+
+.dropdown .li:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+.dropdown .a .li {
+  text-decoration: none;
+  color: #3d3d3d;
+}
+.gallery {
+  margin: 0;
+}
+ul {
+  display: flex;
+  width: calc(80% - 2rem);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+ul:is(:hover, :focus-within) img {
+  opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+  filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+:root {
+  --lerp-0: 1;
+  --lerp-1: 0.5787037;
+  --lerp-2: 0.2962963;
+  --lerp-3: 0.125;
+  --lerp-4: 0.037037;
+  --lerp-5: 0.0046296;
+  --lerp-6: 0;
+}
+
+a {
+  outline-offset: 4px;
+}
+
+li {
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+}
+
+li:is(:hover, :focus-within) {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+li:has(+ li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li {
+  --active-lerp: var(--lerp-1);
+  z-index: 6;
+}
+li:has(+ li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li {
+  --active-lerp: var(--lerp-2);
+  z-index: 5;
+}
+li:has(+ li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li {
+  --active-lerp: var(--lerp-3);
+  z-index: 4;
+}
+li:has(+ li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li {
+  --active-lerp: var(--lerp-4);
+  z-index: 3;
+}
+li:has(+ li + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li + li {
+  --active-lerp: var(--lerp-5);
+  z-index: 2;
+}
+li:has(+ li + li + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li + li + li {
+  --active-lerp: var(--lerp-6);
+  z-index: 1;
+}
+/* Media Query voor iphon devices */
+@media (max-width: 768px) {
+}
+/* Media Query voor iPad Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+}

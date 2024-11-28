@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Your Website Title</title>
+  </head>
+  <body>
+    <div class="intro-section">
+      <div class="left-intro center-text">
+        <div class="menu" id="menu">
+          <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <span class="menu-text">Menu</span>
+        </div>
+        <div class="dropdown" id="dropdown">
+          <ul>
+            <a href="index.html"><li>Home</li></a>
+            <a href="Stiltefotografie.html"><li>Stiltefotografie</li></a>
+            <a href="Portretfotografie.html"><li>Portretfotografie</li></a>
+            <a href="macrofotografie.html"><li>Macrofotografie</li></a>
+            <a href="Feesten_evenementen.html">
+              <li>Feesten & Evenementen</li>
+            </a>
+          </ul>
+        </div>
+        <div class="text-box">
+          <h1 class="title">SharajeFotografie</h1>
+          <p class="subtitle">Momenten vastleggen, die niemand anders ziet.</p>
+        </div>
+      </div>
+      <div class="right-intro"></div>
+    </div>
+    <div class="intro-section mirrored">
+      <div class="left-intro center-text">
+        <h1 class="title">Welkom op SharajeFotografie!</h1>
+        <p class="subtitle">
+          Ik ben Els Sinselmeijer, oprichtster en eigenaar van dit
+          fotografiebedrijf. Als gepassioneerd fotografe richt ik me op
+          kwaliteit, originaliteit en oog voor detail. Mijn werk draait om het
+          vastleggen van mensen in hun meest natuurlijke en authentieke
+          momenten. Of het nu gaat om een intiem portret of een levendige
+          gebeurtenis, mijn doel is om visuele verhalen te vertellen die de
+          emoties en de essentie van het moment vangen en bewaren.
+        </p>
+      </div>
+      <div class="right-intro">
+        <!-- De afbeelding wordt hier als achtergrond ingesteld via CSS -->
+      </div>
+    </div>
+    <script>
+      // JavaScript to toggle the dropdown menu
+      const menu = document.getElementById("menu");
+      const dropdown = document.getElementById("dropdown");
+
+      // Toggle dropdown visibility on menu click
+      menu.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent click from bubbling up
+        dropdown.classList.toggle("show"); // Toggle the dropdown visibility
+      });
+
+      // Close the dropdown if clicking outside of it
+      document.addEventListener("click", (event) => {
+        if (
+          !menu.contains(event.target) &&
+          dropdown.classList.contains("show")
+        ) {
+          dropdown.classList.remove("show"); // Hide the dropdown
+        }
+      });
+
+      // Prevent the links from being blocked by the dropdown
+      dropdown.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent click from bubbling up to the document
+      });
+    </script>
+  </body>
+</html>

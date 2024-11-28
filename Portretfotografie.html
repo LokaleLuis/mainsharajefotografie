@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="your-existing-navbar-styles.css" />
+    <!-- Existing navbar styles -->
+    <link rel="stylesheet" href="fotostyles.css" />
+    <!-- New photo styles -->
+    <title>Macrofotografie</title>
+  </head>
+  <body>
+    <!--NavBar-->
+    <div class="menu" id="menu">
+      <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <span class="menu-text">Menu</span>
+    </div>
+    <div class="dropdown" id="dropdown">
+      <ul class="ul">
+        <a href="index.html" class="a"><li class="li">Home</li></a>
+        <a href="Stiltefotografie.html" class="a"
+          ><li class="li">Stiltefotografie</li></a
+        >
+        <a href="Portretfotografie.html" class="a"
+          ><li class="li">Portretfotografie</li></a
+        >
+        <a href="macrofotografie.html" class="a"
+          ><li class="li">Macrofotografie</li></a
+        >
+        <a href="Feesten_evenementen.html" class="a"
+          ><li class="li">Feesten & Evenementen</li></a
+        >
+      </ul>
+    </div>
+
+    <h1>Portretfotografie</h1>
+    <h2>
+      Mijn passie voor mensen drijft me om unieke portretten te maken die de
+      schoonheid en essentie van elk individu vastleggen. Of het nu gaat om
+      vreugdevolle momenten of stille reflectie, mijn doel is om echte emoties
+      en verhalen te belichten en betekenisvolle herinneringen te creëren.
+    </h2>
+    <div class="gallery">
+      <ul class="results">
+        <li class="result">
+          <a href="#"
+            ><img
+              src="images/portret/portret1.png"
+              width="500"
+              height="500"
+              alt=""
+          /></a>
+        </li>
+        <li class="result">
+          <a href="#"
+            ><img
+              src="images/portret/portret2.png"
+              width="500"
+              height="500"
+              alt=""
+          /></a>
+        </li>
+        <li class="result">
+          <a href="#"
+            ><img
+              src="images/portret/portret3.png"
+              width="500"
+              height="500"
+              alt=""
+          /></a>
+        </li>
+        <li class="result">
+          <a href="#"
+            ><img
+              src="images/portret/portret4.png"
+              width="500"
+              height="500"
+              alt=""
+          /></a>
+        </li>
+        <li class="result">
+          <a href="#"
+            ><img
+              src="images/portret/portret5.png"
+              width="500"
+              height="500"
+              alt=""
+          /></a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      // JavaScript to toggle the dropdown menu
+      const menu = document.getElementById("menu");
+      const dropdown = document.getElementById("dropdown");
+
+      // Toggle dropdown visibility on menu click
+      menu.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent click from bubbling up
+        dropdown.classList.toggle("show"); // Toggle the dropdown visibility
+      });
+
+      // Close the dropdown if clicking outside of it
+      document.addEventListener("click", (event) => {
+        if (
+          !menu.contains(event.target) &&
+          dropdown.classList.contains("show")
+        ) {
+          dropdown.classList.remove("show"); // Hide the dropdown
+        }
+      });
+
+      // Prevent the links from being blocked by the dropdown
+      dropdown.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent click from bubbling up to the document
+      });
+    </script>
+  </body>
+</html>
